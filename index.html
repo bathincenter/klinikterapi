@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathin Center Batam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --light-color: #e8f5e9;
+            --dark-color: #1b5e20;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s ease;
+            position: relative;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+        
+        .logo-img {
+            position: absolute;
+            left: 1.5rem;
+            height: 60px;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .logo-text {
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav ul li::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li:hover::after {
+            width: 100%;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(27, 94, 32, 0.9));
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 1.5s ease;
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            animation: fadeInRight 1s ease;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: all 0.5s;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: var(--white);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Bagian lainnya tetap sama seperti sebelumnya */
+        .services {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            font-size: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.2s ease;
+        }
+        
+        table th, table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: var(--light-color);
+        }
+        
+        table tr:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.01);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            gap: 1.5rem;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 280px;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .contact-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .contact-card p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-card i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            width: 25px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--white);
+            color: var(--primary-color);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: bounceIn 1s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            color: var(--white);
+        }
+        
+        .social-link.facebook:hover {
+            background-color: #3b5998;
+        }
+        
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        
+        .social-link.youtube:hover {
+            background-color: #ff0000;
+        }
+        
+        .social-link.tiktok:hover {
+            background-color: #000000;
+        }
+        
+        .social-link.whatsapp:hover {
+            background-color: #25D366;
+        }
+        
+        .map-container {
+            margin: 3rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInRight 1s ease;
+            transition: all 0.5s;
+        }
+        
+        .map-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .logo-img {
+                height: 50px;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text, .hero-image {
+                text-align: center;
+            }
+            
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-img {
+                position: static;
+                margin-bottom: 1rem;
+                height: 60px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .services, .contact-card {
+                padding: 1.5rem;
+            }
+            
+            table th, table td {
+                padding: 10px 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .contact-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="animate__animated animate__fadeInDown">
+        <div class="header-container">
+            <!-- Ganti src dengan URL logo Anda -->
+            <img src="WhatsApp_Image_2024-09-04_at_18.33.04-removebg-preview.png" alt="Bathin Center Logo" class="logo-img">
+            <div class="logo-text">
+                <div class="logo">BATHIN CENTER BATAM</div>
+                <div class="tagline">Metode terapi ilmiah - alamiah - sunnah - illahiyyah</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home" class="animate__animated animate__fadeIn">Beranda</a></li>
+            <li><a href="#services" class="animate__animated animate__fadeIn animate__delay-1s">Layanan</a></li>
+            <li><a href="#contact" class="animate__animated animate__fadeIn animate__delay-2s">Kontak</a></li>
+            <li><a href="#location" class="animate__animated animate__fadeIn animate__delay-3s">Lokasi</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="animate__animated animate__fadeInUp">Selamat Datang di Bathin Center Batam</h1>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Memberikan pelayanan terapi kesehatan dengan pendekatan ilmiah, alamiah, dan sesuai sunnah untuk kesehatan jasmani dan rohani Anda.</p>
+                    <a href="#services" class="btn animate__animated animate__fadeInUp animate__delay-2s">Lihat Layanan Kami</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Ganti src dengan URL gambar beranda Anda (rasio 1:1) -->
+                    <img src="foto 1.jpg" 
+                         alt="Terapi di Bathin Center" 
+                         class="animate__animated animate__fadeIn animate__delay-1s">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bagian Services, Contact, dan Location tetap sama seperti sebelumnya -->
+        <section id="services" class="services">
+            <h2 class="section-title animate__animated animate__fadeIn">Daftar Layanan Terapi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Terapi</th>
+                        <th>Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="animate__animated animate__fadeIn">
+                        <td><i class="fas fa-heartbeat"></i> Cek Gula Darah</td>
+                        <td class="price">Rp 100.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-1s">
+                        <td><i class="fas fa-vial"></i> Cek Kolesterol</td>
+                        <td class="price">Rp 50.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-1s">
+                        <td><i class="fas fa-flask"></i> Cek Asam Urat</td>
+                        <td class="price">Rp 50.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-2s">
+                        <td><i class="fas fa-hands"></i> Pijat / Massage</td>
+                        <td class="price">Rp 150.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-2s">
+                        <td><i class="fas fa-bone"></i> Kiropraksi / Kretek</td>
+                        <td class="price">Rp 250.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-3s">
+                        <td><i class="fas fa-wind"></i> Gurah Hidung</td>
+                        <td class="price">Rp 200.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-3s">
+                        <td><i class="fas fa-fire"></i> Hijamah / Bekam</td>
+                        <td class="price">Rp 150.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-4s">
+                        <td><i class="fas fa-bug"></i> Sedot Lintah / ekor</td>
+                        <td class="price">Rp 50.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-4s">
+                        <td><i class="fas fa-dot-circle"></i> Akupunktur</td>
+                        <td class="price">Rp 250.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-5s">
+                        <td><i class="fas fa-brain"></i> Hypnotherapy</td>
+                        <td class="price">Rp 450.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-5s">
+                        <td><i class="fas fa-syringe"></i> Fashdu</td>
+                        <td class="price">Rp 150.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-6s">
+                        <td><i class="fas fa-bolt"></i> Bio Energi Listrik</td>
+                        <td class="price">Rp 200.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-6s">
+                        <td><i class="fas fa-quran"></i> Ruqyah Syar'iyyah</td>
+                        <td class="price">INFAQ TERBAIK</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-7s">
+                        <td><i class="fas fa-vials"></i> Paket Cek Darah</td>
+                        <td class="price">Rp 125.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-7s">
+                        <td><i class="fas fa-spa"></i> Paket Pijat+kretek</td>
+                        <td class="price">Rp 350.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-8s">
+                        <td><i class="fas fa-hand-holding-heart"></i> Paket Pijat+Bekam</td>
+                        <td class="price">Rp 250.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-8s">
+                        <td><i class="fas fa-bone"></i> Paket Kiropraksi+Bekam</td>
+                        <td class="price">Rp 350.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-9s">
+                        <td><i class="fas fa-bug"></i> Paket Bekam+Sedot Lintah</td>
+                        <td class="price">Rp 250.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-9s">
+                        <td><i class="fas fa-spa"></i> Paket Pijat+Bekam+Kretek</td>
+                        <td class="price">Rp 450.000</td>
+                    </tr>
+                    <tr class="animate__animated animate__fadeIn animate__delay-10s">
+                        <td><i class="fas fa-star"></i> Paket Full Therapi Bathin</td>
+                        <td class="price">Rp 1.250.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="contact">
+            <h2 class="section-title animate__animated animate__fadeIn">Hubungi Kami</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3><i class="fas fa-info-circle"></i> Informasi Kontak</h3>
+                    <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> 0822 2825 2125</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> Bathincenterterapi@gmail.com</p>
+                    <p><i class="fas fa-credit-card"></i> <strong>Rekening BRI:</strong> 4439 0102 3030 530 (IHSAN AHMAD MUBAROK)</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="far fa-clock"></i> Jam Operasional</h3>
+                    <p><i class="far fa-calendar-alt"></i> <strong>Setiap Hari:</strong> 08.00 - 20.00 WIB</p>
+                  
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://wa.me/6282228252125" class="social-link whatsapp animate__animated animate__bounceIn" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/bathincenterbatam/" class="social-link instagram animate__animated animate__bounceIn animate__delay-1s" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61575225934818&locale=id_ID" class="social-link facebook animate__animated animate__bounceIn animate__delay-2s" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/@bathincenterbatam" class="social-link youtube animate__animated animate__bounceIn animate__delay-3s" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@bathincenterterapi" class="social-link tiktok animate__animated animate__bounceIn animate__delay-4s" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </section>
+        
+        <section id="location">
+            <h2 class="section-title animate__animated animate__fadeIn">Lokasi Kami</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.258344352422!2d104.03431731533828!3d1.120171299227426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9897e8f1a3a0d%3A0x3b5b3e3b5b3e3b5b!2sPusat%20Terapi%20%26%20Thibbun%20Nabami%20Batam!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p style="text-align: center; margin-top: 1rem;">
+                    <a href="https://maps.app.goo.gl/hoAwws9ajvgFqAKA8" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">
+                        <i class="fas fa-map-marker-alt"></i> Buka di Google Maps
+                    </a>
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="animate__animated animate__fadeInUp">
+        <div class="footer-content">
+            <div class="footer-logo">BATHIN CENTER BATAM</div>
+            <div class="footer-links">
+                <a href="#home">Beranda</a>
+                <a href="#services">Layanan</a>
+                <a href="#contact">Kontak</a>
+                <a href="#location">Lokasi</a>
+                <a href="privacy-policy.html">Kebijakan Privasi</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Bathin Center Batam. 
+        </div>
+    </footer>
+    
+    <script>
+        // Animasi saat scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animation = entry.target.getAttribute('class').split('animate__')[1];
+                        entry.target.classList.add('animate__' + animation);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Floating animation for social links
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach((link, index) => {
+                link.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
